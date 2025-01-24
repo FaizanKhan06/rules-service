@@ -16,31 +16,30 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="rules")
+@Table(name = "rules")
 public class RulesEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="rule_id")
+    @Column(name = "rule_id")
     private int ruleId;
-    
-    @Column(name="terms_and_conditions")
+
+    @Column(name = "terms_and_conditions")
     private String termsAndConditions;
 
-    @Column(name="contribution_per_month")
-    private Long contributionPerMonth;
+    @Column(name = "contribution_per_month")
+    private double contributionPerMonth;
 
-    @Column(name="term_period")
+    @Column(name = "term_period")
     private int termPeriod;
 
-    @Column(name="interest_rate")
-    private Long interestRate;
+    @Column(name = "interest_rate")
+    private double interestRate;
 
-    @Column(name="contribution_deadline")
+    @Column(name = "contribution_deadline")
     private LocalDateTime contributionDeadline;
 
-    @Column(name="community_start_date")
+    @Column(name = "community_start_date")
     private LocalDateTime communityStartDate;
 
 }
-      
