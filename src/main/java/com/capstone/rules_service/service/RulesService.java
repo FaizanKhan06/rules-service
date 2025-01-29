@@ -43,7 +43,8 @@ public class RulesService {
         // TODO: Change the localhost to container name
         String response = restClient.put()
                 .uri("http://localhost:5002/api/communities/" + newRule.getCommunityId() + "?ruleId="
-                        + rulesOutputPojo.getRuleId())
+                        + rulesOutputPojo.getRuleId() + "&remainingTermPeriod=" + rulesOutputPojo.getTermPeriod()
+                        + "&nextContributionDate=" + newRule.getCommunityStartDate())
                 .retrieve().body(String.class);
 
         System.out.println(response);
